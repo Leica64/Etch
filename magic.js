@@ -1,8 +1,12 @@
+
 function makeNewDiv() {
    let input = prompt('grid size');
-   while (input){
-     console.dir(container.firstElementChild);  
-     const box = document.createElement('div');
+   while (input){ 
+     const element = document.createElement('div');
+     element.setAttribute(
+      'style',
+      'background-color: red; width: 20px; height: 20px;' 
+     )
      console.log(input);
      input--;
     }
