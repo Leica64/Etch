@@ -6,8 +6,10 @@ function makeNewDiv() {
      element.setAttribute(
       'style',
       'background-color: red; width: 20px; height: 20px;' 
-     )
+     );
      console.log(input);
+      const box = document.getElementById('box');
+      box.appendChild(element);
      input--;
     }
 }
