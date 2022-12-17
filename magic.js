@@ -1,13 +1,6 @@
 const ship = document.getElementsByClassName("ship");
 const colours = ['lightcyan','lavenderblush','darkseagreen','darkolivegreen','lightpink','azure','mediumorchid','navy','aqua','mistyrose','mediumturquoise'];
 
-/*function getUserInput() {
-  let input = prompt('grid size');
-  let inputValid = true;
-  inputValid = /^\d+$/.test(input);
-
-}*/
-
 function getUserInput() {
   clearGrid();
   let input = prompt('grid size');
@@ -24,7 +17,6 @@ function makeNewDiv(input) {
    let shlongus = parseInt(input,10);
    let gridSize = shlongus * shlongus;
    let rowOfBoxes = [];
-   console.log(input);
    while (gridSize){ 
      let element = document.createElement('div');
      element.setAttribute('id','box');
