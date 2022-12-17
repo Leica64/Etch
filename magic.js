@@ -14,15 +14,15 @@ function getUserInput() {
 }
 
 function makeNewDiv(input) {
-   let shlongus = parseInt(input,10);
-   let gridSize = shlongus * shlongus;
+   let userInput = parseInt(input,10);
+   let gridSize = userInput * userInput;
    let rowOfBoxes = [];
    while (gridSize){ 
      let element = document.createElement('div');
      element.setAttribute('id','box');
      rowOfBoxes.push(element);
 
-      if ((gridSize -1) % shlongus === 0){
+      if ((gridSize -1) % userInput === 0){
        const container = document.createElement('div');
        container.setAttribute('class','container');
        rowOfBoxes.forEach(box => {
@@ -40,7 +40,7 @@ function makeNewDiv(input) {
   containers.forEach(container => {
     container.setAttribute(
       'style',
-      `height: ${parseInt(900/shlongus)}px`)
+      `height: ${parseInt(900/userInput)}px`)
   });
   hoverEffect();
 }
