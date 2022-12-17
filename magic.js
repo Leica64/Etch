@@ -1,12 +1,30 @@
 const ship = document.getElementsByClassName("ship");
 const colours = ['lightcyan','lavenderblush','darkseagreen','darkolivegreen','lightpink','azure','mediumorchid','navy','aqua','mistyrose','mediumturquoise'];
 
-function makeNewDiv() {
-   let input = prompt('grid size');
+/*function getUserInput() {
+  let input = prompt('grid size');
+  let inputValid = true;
+  inputValid = /^\d+$/.test(input);
+
+}*/
+
+function getUserInput() {
+  clearGrid();
+  let input = prompt('grid size');
+  if(/^\d+$/.test(input) === true && parseInt(input,10) <101){
+   makeNewDiv(input);
+  }
+  else if(input) {
+    alert('Invalid input please enter a number between 1 and 100');
+    getUserInput();
+  }
+}
+
+function makeNewDiv(input) {
    let shlongus = parseInt(input,10);
    let gridSize = shlongus * shlongus;
    let rowOfBoxes = [];
-
+   console.log(input);
    while (gridSize){ 
      let element = document.createElement('div');
      element.setAttribute('id','box');
