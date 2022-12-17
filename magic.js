@@ -1,4 +1,5 @@
 const ship = document.getElementsByClassName("ship");
+const colours = ['lightcyan','lavenderblush','darkseagreen','darkolivegreen','lightpink','azure','mediumorchid','navy','aqua','mistyrose','mediumturquoise'];
 
 function makeNewDiv() {
    let input = prompt('grid size');
@@ -24,13 +25,24 @@ function makeNewDiv() {
      }
      gridSize--;
     }
-    const boxes = document.querySelectorAll("#box");  
-    boxes.forEach(box => {
-      console.log(parseInt((1/shlongus)*100));
-      box.setAttribute(
-        'style',
-        `height: ${parseInt((1/shlongus)*100)}vh`)
-    });
+
+  const containers = document.querySelectorAll(".container");  
+  containers.forEach(container => {
+    container.setAttribute(
+      'style',
+      `height: ${parseInt(900/shlongus)}px`)
+  });
+  hoverEffect();
+}
+
+function hoverEffect(){
+  const boxes = document.querySelectorAll("#box");  
+  boxes.forEach(box => {
+    box.addEventListener("mouseover",(event)=>{
+      const randomColour = colours[Math.floor(Math.random()*colours.length)];
+      event.target.style.backgroundColor=randomColour;
+    })
+  })
 }
 
 function clearGrid(){
