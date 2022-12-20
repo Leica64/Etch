@@ -8,6 +8,8 @@ Etch-A-Sketch using JS and CSS to generate a grid by utilising DOM
 
 ## Getting Started
 
+Open game.html in browser and click "set grid"
+
 ### Dependencies
 
 Web browser
